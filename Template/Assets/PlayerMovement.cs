@@ -149,5 +149,6 @@ public class PlayerMovement : MonoBehaviour
         {
             score++;
         }
+      //  if (collision.gameObject.tag == "Ground") { canJump = true;}
     }
 }
