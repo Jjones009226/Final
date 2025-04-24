@@ -137,10 +137,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Death")
+        if (other.tag == "coin")
+            score++;
+            Destroy(other.gameObject);
+
+        if (other.tag == "Transition")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -151,4 +156,5 @@ public class PlayerMovement : MonoBehaviour
         }
       //  if (collision.gameObject.tag == "Ground") { canJump = true;}
     }
+
 }
