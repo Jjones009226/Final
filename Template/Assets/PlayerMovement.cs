@@ -43,13 +43,13 @@ public class PlayerMovement : MonoBehaviour
     {
         //get the player look, pull the direction the camera is facing
         //TransformDirection() translates the vector from local (player) space to world (scene) space
-        Vector3 playerLook = myCam.transform.TransformDirection(Vector3.forward);
-        Debug.DrawRay(transform.position, playerLook * 3f, Color.magenta);
+        //Vector3 playerLook = myCam.transform.TransformDirection(Vector3.forward);
+       // Debug.DrawRay(transform.position, playerLook * 3f, Color.magenta);
 
         //look is cumulative, so instead of setting it to a new value
         //we add a delta (difference in look angle)
         //multiply by Time.deltaTime since we're in Update() to standardize look speed across any framerate
-        myLook += DeltaLook() * Time.deltaTime;
+        //myLook += DeltaLook() * Time.deltaTime;
 
         //clamp our look to a reasonable range so the player is always in view
         //and we can't infinitely rotate cam look
@@ -65,8 +65,8 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log("look dir:" + myLook);
 
         //apply our look rotations to the player AND the camera
-        transform.rotation = Quaternion.Euler(0f, myLook.x, 0f);
-        myCam.transform.rotation = Quaternion.Euler(-myLook.y, myLook.x, 0f);
+      //  transform.rotation = Quaternion.Euler(0f, myLook.x, 0f);
+      //  myCam.transform.rotation = Quaternion.Euler(-myLook.y, myLook.x, 0f);
 
         if (Input.GetKey(KeyCode.Space))
         {
