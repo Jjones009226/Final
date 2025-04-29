@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Death
   - Transition
+  - ScoreTracker
   layers:
   - Default
   - TransparentFX
