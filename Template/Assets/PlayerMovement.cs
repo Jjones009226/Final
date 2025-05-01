@@ -137,9 +137,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "coin")
+        if (other.tag == "coin") 
+        {
             score++;
             Destroy(other.gameObject);
+        }
+
+        if (other.tag == "Death")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
 
         if (other.tag == "Transition")
         {
